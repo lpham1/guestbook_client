@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const Post = ({title, content, onclick}) => {
+const Post = ({title, content, onClick}) => {
  
   return (
     <div className='card mb-2'>
@@ -13,8 +13,8 @@ const Post = ({title, content, onclick}) => {
             </div>
             <div className='col-6 d-flex justify-content-end align-self-start'>
                 <div className='row '>
-                <a href='#' className = "col close">Edit</a>
-                <a href='#' className = "col" onClick = {onclick}>Delete</a>
+        
+                <button className = "col" onClick = {onClick}>Delete</button>
                 </div>
             </div>
         </div>

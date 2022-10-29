@@ -25,9 +25,9 @@ const MyModal = (props) => {
       }
     );
 
-    const response = fetch(new_request);
+    const response = await fetch(new_request);
     if (response.ok) {
-      // console.log(data)
+       console.log(response)
     }
     else {
       console.log(response.status)
@@ -80,7 +80,8 @@ const MyModal = (props) => {
     }, []
   )
 
-  const deleteItem= async (noteId) => {
+  const deleteItem = async (noteId) => {
+    // event.preventDefault()
     console.log(noteId)
 
     const response = await fetch(`${baseURL}/${noteId}`, {
@@ -108,7 +109,7 @@ const MyModal = (props) => {
                 key={item.id}
                 title={item.title}
                 content={item.content}
-                onClick={deleteItem(item.id)}
+                onClick = {()=> deleteItem(item.id)}
               />
             )
             )
@@ -164,7 +165,8 @@ const MyModal = (props) => {
         .form-group{
           margin: 20px;
         }
-        .posts:hover{
+
+        .posts::hover{
           transform: scale(1.1)
         }
       `}</style>
